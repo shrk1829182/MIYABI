@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Miyabi 💙 Fanpage</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(120deg, #1f1f2e, #2b2d42);
+      color: #ffffff;
+      text-align: center;
+    }
+
+    header {
+      padding: 2rem;
+      background-color: #1b1d2a;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: #7fc9ff;
+      margin: 0;
+    }
+
+    .intro {
+      margin: 2rem;
+      font-size: 1.2rem;
+    }
+
+    .miyabi-img {
+      max-width: 90%;
+      border-radius: 12px;
+      margin: 1rem auto;
+      box-shadow: 0 0 20px rgba(127, 201, 255, 0.5);
+    }
+
+    .carousel {
+      margin: 2rem auto;
+      font-size: 1.3rem;
+      color: #a3e8ff;
+      padding: 1rem;
+      max-width: 600px;
+      animation: fadein 1s ease-in-out;
+      min-height: 50px;
+    }
+
+    @keyframes fadein {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      padding: 2rem;
+    }
+
+    .gallery img {
+      width: 250px;
+      height: auto;
+      border-radius: 8px;
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      background-color: #1b1d2a;
+      padding: 1rem;
+      color: #888;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Miyabi 💙 Fanpage</h1>
+    <p>Zenless Zone Zero's coolest samurai queen</p>
+  </header>
+
+  <section class="intro">
+    <p>Welcome to the ultimate Miyabi fanpage! This page is dedicated to our graceful, elegant, and deadly slash queen from Zenless Zone Zero.</p>
+    <img class="miyabi-img" src="https://i.imgur.com/VV1fhxB.png" alt="Miyabi Posing"/>
+  </section>
+
+  <div class="carousel" id="quote-box">Loading quote...</div>
+
+  <section class="gallery">
+    <img src="https://i.imgur.com/VV1fhxB.png" alt="Miyabi Fanart 1" />
+    <img src="https://i.imgur.com/fgtQVtd.png" alt="Miyabi Fanart 2" />
+    <img src="https://i.imgur.com/P5eGTnB.png" alt="Miyabi Fanart 3" />
+  </section>
+
+  <footer>
+    <p>Made with 💙 by a Miyabi simp</p>
+  </footer>
+
+  <script>
+    const quotes = [
+      "Stay focused. One cut is all it takes.",
+      "I walk the path of steel and silence.",
+      "Elegance is not weakness.",
+      "A blade never falters... nor do I.",
+      "For Section 6, and for order."
+    ];
+
+    const quoteBox = document.getElementById("quote-box");
+    let quoteIndex = 0;
+
+    function showQuote() {
+      quoteBox.textContent = quotes[quoteIndex];
+      quoteBox.style.opacity = 0;
+      setTimeout(() => {
+        quoteBox.style.opacity = 1;
+      }, 100);
+      quoteIndex = (quoteIndex + 1) % quotes.length;
+    }
+
+    showQuote();
+    setInterval(showQuote, 4000);
+  </script>
+</body>
+</html>
